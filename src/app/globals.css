@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Manrope', 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    color: #111418;
+    background-color: #fafbfc;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .layout-container {
+    @apply w-full;
+  }
+  
+  .layout-content-container {
+    @apply w-full;
+  }
+  
+  .btn-primary {
+    @apply bg-[#0c7ff2] text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0c7ff2] focus:ring-offset-2 shadow-md;
+    box-shadow: 0 2px 8px 0 rgba(12, 127, 242, 0.10), 0 0 0 2px rgba(12,127,242,0.08) inset;
+    border-radius: 10px;
+    /* Slight inner glow */
+    position: relative;
+    z-index: 1;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible {
+    @apply bg-[#0a6fd8] scale-105;
+    box-shadow: 0 4px 16px 0 rgba(12, 127, 242, 0.18), 0 0 0 3px rgba(12,127,242,0.12) inset;
+  }
+  .btn-primary:active {
+    @apply scale-100;
+    box-shadow: 0 1px 4px 0 rgba(12, 127, 242, 0.10), 0 0 0 1px rgba(12,127,242,0.10) inset;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-[#0c7ff2] font-medium py-3 px-6 rounded-lg border border-[#0c7ff2] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#0c7ff2] focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-soft p-6 border border-gray-100;
+  }
+  
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#0c7ff2] to-[#0a6fd8] bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 

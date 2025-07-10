@@ -1,0 +1,235 @@
+# Jon's Tutoring - Premium Math Tutoring Website
+
+## Project Overview
+A premium, high-level math tutoring website emphasizing quality, clarity, and professionalism. The site should be responsive, platform-agnostic, and accessible across all devices.
+
+## Project Structure and Naming Conventions
+
+### Directory Structure
+```
+jon-tutoring/
+├── public/
+│   ├── images/
+│   ├── icons/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── ui/
+│   │   └── sections/
+│   ├── styles/
+│   ├── utils/
+│   ├── hooks/
+│   └── pages/
+├── package.json
+├── tailwind.config.js
+├── next.config.js
+└── README.md
+```
+
+### Naming Conventions
+- **Files**: kebab-case (e.g., `hero-section.tsx`, `testimonial-card.tsx`)
+- **Components**: PascalCase (e.g., `HeroSection`, `TestimonialCard`)
+- **Functions**: camelCase (e.g., `handleScroll`, `formatTestimonial`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `NAVIGATION_ITEMS`, `COLORS`)
+- **CSS Classes**: kebab-case with BEM methodology when needed
+
+## Design Guidelines
+
+### Color Palette
+```css
+/* Primary Colors */
+--primary-blue: #2563eb;      /* Trust, professionalism */
+--primary-dark: #1e40af;      /* Depth, authority */
+--accent-gold: #f59e0b;       /* Premium feel, success */
+--accent-light: #fef3c7;      /* Warm highlights */
+
+/* Neutral Colors */
+--white: #ffffff;
+--gray-50: #f9fafb;
+--gray-100: #f3f4f6;
+--gray-200: #e5e7eb;
+--gray-300: #d1d5db;
+--gray-600: #4b5563;
+--gray-800: #1f2937;
+--gray-900: #111827;
+
+/* Semantic Colors */
+--success: #10b981;
+--warning: #f59e0b;
+--error: #ef4444;
+```
+
+### Typography
+- **Primary Font**: Inter (clean, modern, highly readable)
+- **Secondary Font**: Georgia (for quotes and testimonials)
+- **Font Weights**: 300 (light), 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
+- **Line Heights**: 1.5 (body), 1.2 (headings), 1.6 (quotes)
+
+### Layout Principles
+- **Max Width**: 1200px for desktop content
+- **Grid System**: 12-column responsive grid
+- **Spacing**: 8px base unit (8px, 16px, 24px, 32px, 48px, 64px, 96px)
+- **Border Radius**: 8px (cards), 12px (buttons), 16px (hero sections)
+- **Shadows**: Subtle elevation with `box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)`
+
+## Tech Stack
+
+### Core Technologies
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod validation
+
+### Development Tools
+- **Package Manager**: npm
+- **Linting**: ESLint + Prettier
+- **Type Checking**: TypeScript strict mode
+- **Testing**: Jest + React Testing Library
+- **Git Hooks**: Husky + lint-staged
+
+### Performance & Optimization
+- **Image Optimization**: Next.js Image component
+- **Font Loading**: Next.js font optimization
+- **Code Splitting**: Automatic with Next.js
+- **SEO**: Next.js metadata API
+- **Analytics**: Google Analytics 4
+
+## Hosting Considerations
+
+### Platform Agnostic Features
+- **Static Export**: Support for Vercel, Netlify, GitHub Pages
+- **Environment Variables**: Proper configuration for different environments
+- **Build Optimization**: Minimize bundle size and optimize assets
+- **CDN Ready**: Optimized for content delivery networks
+
+### Deployment Options
+- **Vercel**: Recommended for Next.js (automatic deployments)
+- **Netlify**: Static site hosting with form handling
+- **GitHub Pages**: Free hosting for static sites
+- **AWS S3 + CloudFront**: Enterprise-grade hosting
+
+## Accessibility and Performance Best Practices
+
+### Accessibility (WCAG 2.1 AA)
+- **Semantic HTML**: Proper heading hierarchy, landmarks, ARIA labels
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Reader Support**: Descriptive alt text, proper focus management
+- **Color Contrast**: Minimum 4.5:1 ratio for normal text
+- **Focus Indicators**: Visible focus states for all interactive elements
+
+### Performance Targets
+- **Lighthouse Score**: 90+ across all metrics
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+
+### Mobile-First Responsive Design
+- **Breakpoints**: 320px (mobile), 768px (tablet), 1024px (desktop), 1440px (large)
+- **Touch Targets**: Minimum 44px for interactive elements
+- **Viewport**: Proper meta viewport tag
+- **Performance**: Optimized images and lazy loading
+
+## Development Assumptions and Defaults
+
+### Content Structure
+- **Hero Section**: Compelling headline, CTA, background image
+- **About Section**: Professional bio, credentials, teaching philosophy
+- **Services Section**: Math subjects, grade levels, teaching methods
+- **Testimonials Section**: Student/parent quotes with photos
+- **Contact Section**: Contact form, location, availability
+
+### Component Patterns
+- **Reusable UI Components**: Button, Card, Section, Container
+- **Layout Components**: Header, Footer, Navigation
+- **Section Components**: Hero, About, Services, Testimonials, Contact
+- **Utility Components**: ScrollToTop, LoadingSpinner, ErrorBoundary
+
+### Default Behaviors
+- **Smooth Scrolling**: CSS scroll-behavior: smooth
+- **Loading States**: Skeleton loaders for dynamic content
+- **Error Handling**: Graceful error boundaries and fallbacks
+- **Form Validation**: Real-time validation with helpful error messages
+
+## Code Quality Standards
+
+### TypeScript
+- **Strict Mode**: Enabled
+- **No Any**: Avoid `any` type, use proper interfaces
+- **Explicit Returns**: Functions should have explicit return types
+- **Interface Naming**: PascalCase with descriptive names
+
+### React Best Practices
+- **Functional Components**: Use hooks and functional components
+- **Custom Hooks**: Extract reusable logic into custom hooks
+- **Props Interface**: Define interfaces for all component props
+- **Children Props**: Use React.ReactNode for flexible children
+
+### CSS/Tailwind Guidelines
+- **Utility First**: Prefer Tailwind utilities over custom CSS
+- **Component Classes**: Use @apply for complex component styles
+- **Responsive Design**: Mobile-first approach with responsive utilities
+- **Dark Mode**: Support for dark mode (future consideration)
+
+## Testing Strategy
+
+### Unit Tests
+- **Component Testing**: Test all interactive components
+- **Hook Testing**: Test custom hooks in isolation
+- **Utility Testing**: Test utility functions thoroughly
+
+### Integration Tests
+- **Form Submission**: Test contact form functionality
+- **Navigation**: Test smooth scrolling and navigation
+- **Responsive Design**: Test across different screen sizes
+
+### E2E Tests
+- **Critical User Paths**: Test main user journeys
+- **Cross-Browser**: Test in Chrome, Firefox, Safari, Edge
+- **Mobile Testing**: Test on various mobile devices
+
+## SEO and Marketing
+
+### Technical SEO
+- **Meta Tags**: Proper title, description, Open Graph tags
+- **Structured Data**: JSON-LD for local business
+- **Sitemap**: Automatic sitemap generation
+- **Robots.txt**: Proper crawling instructions
+
+### Content Strategy
+- **Keyword Research**: Math tutoring, private tutor, academic support
+- **Local SEO**: Location-based optimization
+- **Content Quality**: High-quality, informative content
+- **Call-to-Actions**: Clear, compelling CTAs throughout
+
+## Security Considerations
+
+### Frontend Security
+- **Input Validation**: Client-side and server-side validation
+- **XSS Prevention**: Sanitize user inputs
+- **HTTPS**: Enforce secure connections
+- **Content Security Policy**: Implement CSP headers
+
+### Data Protection
+- **GDPR Compliance**: Cookie consent, data handling
+- **Privacy Policy**: Clear privacy information
+- **Contact Form Security**: Rate limiting, spam protection
+
+## Development Workflow
+
+### Git Workflow
+- **Branch Naming**: feature/component-name, fix/issue-description
+- **Commit Messages**: Conventional commits format
+- **Pull Requests**: Required for all changes
+- **Code Review**: Mandatory before merging
+
+### Development Environment
+- **Node Version**: 18+ (LTS)
+- **Package Manager**: npm (consistent across team)
+- **IDE Setup**: VS Code with recommended extensions
+- **Environment Variables**: .env.local for local development
+
+This configuration ensures a professional, scalable, and maintainable codebase that reflects the premium nature of the tutoring service while being accessible and performant across all devices and platforms. 
